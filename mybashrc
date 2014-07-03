@@ -8,3 +8,15 @@ http://demo.ipspace.net/get/OpenFlow
 # find files by size
 
 find . -type f -size +100k -exec ls -lh {} \;
+
+
+
+# ssh connection freeze problems
+
+[ssasubil@veprossh .ssh]$ ls -lrt
+total 12
+-rw-r--r--. 1 ssasubil ssasubil 7894 Jun 24 13:25 known_hosts
+-rw-------. 1 ssasubil ssasubil   33 Jul  3 11:25 config
+[ssasubil@veprossh .ssh]$ cat config
+Host *
+  ServerAliveInterval 240
