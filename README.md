@@ -8,7 +8,7 @@ Useful Linux scripts
 hdfs_clean_cron.sh
 
 ===============================
-
+```
 #!/bin/bash
 
 currenttimeinsecs=`date +%s`
@@ -25,5 +25,5 @@ do
 done < /var/lib/jenkins/hdfs_fs_clean.log
 
 
-
+```
 ===============================
