@@ -39,4 +39,23 @@ prettify json string
 
 echo '{"foo": "lorem", "bar": "ipsum"}' | python -m json.tool
 
+
+To read the json input from command line
+curl -X POST http://10.133.147.10:8080/v2/apps   -d @- -H "Content-Type: application/json" 
+
+at the end press Ctrl+D
+
+Ex:
+
+ curl -X POST http://10.133.147.10:8080/v2/apps   -d @- -H "Content-Type: application/json"                                         {
+    "id": "basic-0",
+    "cmd": "while [ true ] ; do echo 'Hello Marathon' ; sleep 5 ; done",
+    "cpus": 0.1,
+    "mem": 10.0,
+    "instances": 1
+}
+
+
+
+
 ```
