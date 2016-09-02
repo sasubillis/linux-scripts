@@ -35,4 +35,8 @@ To post a marathon based task
 
 curl -X POST http://10.133.147.10:8080/v2/apps   -d '{ "id": "sreenutest", "cmd": "while true ; do echo hello ; sleep 5 ; done", "cpus": 0.1, "mem": 10.0, "instances": 1 }'  -H "Content-Type: application/json"
 
+prettify json string
+
+echo '{"foo": "lorem", "bar": "ipsum"}' | python -m json.tool
+
 ```
