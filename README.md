@@ -27,3 +27,6 @@ done < /var/lib/jenkins/hdfs_fs_clean.log
 
 ```
 ===============================
+```
+alias json_escape="python -c 'import json,sys; print json.dumps(sys.stdin.read())'"
+```
