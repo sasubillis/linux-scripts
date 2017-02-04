@@ -1,6 +1,7 @@
 function clean_docker() {
 
 docker rmi -f $(docker images -f "dangling=true" -q)
+docker rmi -f `docker images -aq`
 
 docker rm $(docker ps --filter status=exited --quiet)
 
