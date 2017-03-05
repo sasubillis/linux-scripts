@@ -1,0 +1,13 @@
+# To execute a single command on different host than localhost
+ansible --private-key ./sreenu.pem -i hosts/ec2-hj.hosts 'ae-2' -a 'yum -y remove mesos'
+
+
+# To complete interrupted yum transactions
+yum-complete-transaction --cleanup-only
+
+
+# To see the list of all versions of a component
+yum --showduplicates list mesos | expand
+
+#  to downgrade a package to particular version
+yum downgrade   mesos-1.0.1-2.0.93.centos701406.x86_64
