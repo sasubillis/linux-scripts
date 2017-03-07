@@ -54,3 +54,10 @@ rm ./-f
 +------------ Minute            (range: 0-59)
 
 
+
+# if outfile of a running process is accedentally deleted and to recover the output log file before log rotation happens ( sending HUP)
+
+ls -la /proc/966/fd/10
+lrwx------ 1 root root 64 Sep  5 08:56 /proc/966/fd/10 -> /var/lib/critical/process.out (deleted)
+
+ dd if=/proc/966/fd/10 of=/tmp/recovered.out
