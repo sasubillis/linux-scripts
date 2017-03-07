@@ -33,6 +33,7 @@ find . -type f -name "*.htm" -exec mv -f {} {}l \;
 # {} is replaced by find with the file name.
 
  find . -type f -name "*.html" -exec sh -c 'f="{}"; mv -f $f ${f%l}' \;
+ find . -type f -name “*.htm” -exec sh -c ‘f={};mv -f $f $(basename “$f” .htm).html’ \;
 
 a="outside"
 sh -c 'a="inside"; echo $a'
@@ -61,3 +62,11 @@ ls -la /proc/966/fd/10
 lrwx------ 1 root root 64 Sep  5 08:56 /proc/966/fd/10 -> /var/lib/critical/process.out (deleted)
 
  dd if=/proc/966/fd/10 of=/tmp/recovered.out
+ 
+ tail -f -n +0 /proc/966/fd/10 > /tmp/recovered.out
+
+
+# if disk is full without any file having huge sizes, check with any open file descriptors from processes for any references to large files
+lsof | grep deleted | awk '{print $2,$4,$8,$9}'
+
+
