@@ -70,3 +70,6 @@ lrwx------ 1 root root 64 Sep  5 08:56 /proc/966/fd/10 -> /var/lib/critical/proc
 lsof | grep deleted | awk '{print $2,$4,$8,$9}'
 
 
+# Watch at every 5 secs and highlight the differences in consecutive output
+watch -n 5 -d 'ps aux |grep process|wc -l'
+
