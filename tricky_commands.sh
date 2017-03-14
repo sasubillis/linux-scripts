@@ -73,3 +73,6 @@ lsof | grep deleted | awk '{print $2,$4,$8,$9}'
 # Watch at every 5 secs and highlight the differences in consecutive output
 watch -n 5 -d 'ps aux |grep process|wc -l'
 
+
+# sed editing  in a file having lines starts with  Return-Path: <someone@domain.com> it gets the text between < and >
+sed -n -e '/^Return-Path:/ {s/.*<\(.*\)>.*/\1/;p;q}'
