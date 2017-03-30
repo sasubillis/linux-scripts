@@ -76,3 +76,7 @@ watch -n 5 -d 'ps aux |grep process|wc -l'
 
 # sed editing  in a file having lines starts with  Return-Path: <someone@domain.com> it gets the text between < and >
 sed -n -e '/^Return-Path:/ {s/.*<\(.*\)>.*/\1/;p;q}'
+
+
+#Given a file,  replace all occurrence of word “ABC” with “DEF” from 5th line till end in only those lines that contains word “MNO”
+sed –n ‘5,$p’ file1|sed ‘/MNO/s/ABC/DEF/’
