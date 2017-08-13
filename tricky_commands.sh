@@ -80,3 +80,9 @@ sed -n -e '/^Return-Path:/ {s/.*<\(.*\)>.*/\1/;p;q}'
 
 #Given a file,  replace all occurrence of word “ABC” with “DEF” from 5th line till end in only those lines that contains word “MNO”
 sed –n ‘5,$p’ file1|sed ‘/MNO/s/ABC/DEF/’
+
+
+# get the lines between given start and end lines in a file
+start='line1'
+end='line2'
+awk "/$start/{flag=1; next} /$end/{flag=0} flag" test.conf
